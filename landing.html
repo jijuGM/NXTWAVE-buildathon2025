@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>CarbonSense — Your Friendly Carbon Footprint Estimator</title>
+    <meta name="description" content="CarbonSense helps you easily estimate and understand your carbon footprint. A simple, private, and actionable tool for individuals and event organizers.">
+    <meta name="keywords" content="carbon footprint, climate change, sustainability, eco-friendly, carbon estimator, event sustainability">
+    <meta name="author" content="CarbonSense">
+    
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:title" content="CarbonSense — Your Friendly Carbon Footprint Estimator">
+    <meta property="og:description" content="Easily estimate your carbon footprint with our private, user-friendly tool. Perfect for individuals and event organizers looking to make a positive impact.">
+    <meta property="og:image" content="https://placehold.co/1200x630/2c7a7b/ffffff?text=CarbonSense">
+    <meta property="og:url" content="https://example.com/carbonsense"> <!-- Replace with actual URL -->
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CarbonSense — Your Friendly Carbon Footprint Estimator">
+    <meta name="twitter:description" content="A simple, private, and actionable tool for individuals and event organizers to estimate and understand their carbon footprint.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/2c7a7b/ffffff?text=CarbonSense">
+    
+    <!-- Stylesheets and Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-green': {
+                            50: '#f0f9f4',
+                            100: '#e0f2e9',
+                            200: '#c1e5d8',
+                            300: '#a2d8c7',
+                            400: '#64bb9e',
+                            500: '#4caf50', // Warm green accent
+                            600: '#388e3c',
+                            700: '#2e7d32',
+                            800: '#1b5e20',
+                            900: '#103e13',
+                        },
+                        'gray': {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            200: '#e5e7eb',
+                            300: '#d1d5db',
+                            400: '#9ca3af',
+                            500: '#6b7280',
+                            600: '#4b5563',
+                            700: '#374151',
+                            800: '#1f2937',
+                            900: '#111827',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Simple accordion animation */
+        .faq-answer {
+            transition: max-height 0.3s ease-out;
+            overflow: hidden;
+            max-height: 0;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <svg class="h-8 w-8 text-brand-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span class="text-2xl font-bold text-gray-800">CarbonSense</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-brand-green-600 transition">Features</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-brand-green-600 transition">How It Works</a>
+                <a href="#faq" class="text-gray-600 hover:text-brand-green-600 transition">FAQ</a>
+            </nav>
+            <a href="#dashboard" class="hidden md:inline-block bg-brand-green-500 text-white font-semibold px-5 py-2 rounded-lg hover:bg-brand-green-600 transition shadow-sm" title="View the live dashboard">See Dashboard</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">Understand your impact,<br>simply and privately.</h1>
+                <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">CarbonSense is a friendly estimator that helps you discover your carbon footprint without compromising your privacy. Actionable insights for a greener you.</p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#" class="w-full sm:w-auto bg-brand-green-500 text-white font-semibold px-8 py-4 rounded-lg hover:bg-brand-green-600 transition shadow-lg text-lg" title="Start your personal estimate">Estimate Your Footprint</a>
+                    <a href="#" class="w-full sm:w-auto bg-gray-200 text-gray-800 font-semibold px-8 py-4 rounded-lg hover:bg-gray-300 transition text-lg" title="Learn about event solutions">For Event Organizers</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Statement -->
+        <section class="py-16 bg-brand-green-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-gray-900">It shouldn't be hard to be mindful.</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Calculating your environmental impact can feel complex and invasive. We built CarbonSense to provide a clear, simple, and secure way to understand your footprint, empowering you to make choices that matter.</p>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">Everything you need, nothing you don't.</h2>
+                    <p class="mt-4 text-lg text-gray-600">Simple tools for meaningful change.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                        <div class="bg-brand-green-100 text-brand-green-600 rounded-full h-12 w-12 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                        </div>
+                        <h3 class="mt-6 text-xl font-semibold text-gray-900">Privacy-First</h3>
+                        <p class="mt-2 text-gray-600">No accounts, no tracking. Your data is yours alone. We process your inputs anonymously to give you an estimate and then forget it.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                        <div class="bg-brand-green-100 text-brand-green-600 rounded-full h-12 w-12 flex items-center justify-center">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                        </div>
+                        <h3 class="mt-6 text-xl font-semibold text-gray-900">For Individuals & Events</h3>
+                        <p class="mt-2 text-gray-600">Whether you're curious about your personal footprint or planning a large-scale event, our tool adapts to provide a relevant estimate.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                        <div class="bg-brand-green-100 text-brand-green-600 rounded-full h-12 w-12 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                        </div>
+                        <h3 class="mt-6 text-xl font-semibold text-gray-900">Actionable Insights</h3>
+                        <p class="mt-2 text-gray-600">We don't just give you a number. We show you where your biggest impacts are and suggest simple, effective ways to reduce them.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">Get your estimate in three simple steps.</h2>
+                    <p class="mt-4 text-lg text-gray-600">It's quick, easy, and completely anonymous.</p>
+                </div>
+                <div class="relative">
+                    <!-- Dashed line for desktop -->
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full border-t-2 border-dashed border-gray-300" style="margin-top: -1px;"></div>
+                    <div class="grid md:grid-cols-3 gap-12 relative">
+                        <!-- Step 1 -->
+                        <div class="text-center">
+                            <div class="bg-white border-2 border-gray-300 text-brand-green-600 rounded-full h-20 w-20 flex items-center justify-center mx-auto text-2xl font-bold shadow-sm">1</div>
+                            <h3 class="mt-6 text-xl font-semibold text-gray-900">Answer a Few Questions</h3>
+                            <p class="mt-2 text-gray-600">Tell us a little about your lifestyle, travel, and consumption habits. We'll guide you through it.</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="text-center">
+                            <div class="bg-white border-2 border-gray-300 text-brand-green-600 rounded-full h-20 w-20 flex items-center justify-center mx-auto text-2xl font-bold shadow-sm">2</div>
+                            <h3 class="mt-6 text-xl font-semibold text-gray-900">Get Your Instant Estimate</h3>
+                            <p class="mt-2 text-gray-600">Our tool calculates your estimated carbon footprint and breaks it down into easy-to-understand categories.</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="text-center">
+                            <div class="bg-brand-green-500 border-2 border-brand-green-600 text-white rounded-full h-20 w-20 flex items-center justify-center mx-auto text-2xl font-bold shadow-lg">3</div>
+                            <h3 class="mt-6 text-xl font-semibold text-gray-900">Reduce Your Impact</h3>
+                            <p class="mt-2 text-gray-600">Explore personalized tips and actionable suggestions to lower your footprint and live more sustainably.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Dashboard CTA Section -->
+        <section id="dashboard" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-gray-900">Explore the Live Dashboard</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">See aggregated, anonymous data on our interactive dashboard. Understand trends and collective impact in real-time.</p>
+                <div class="mt-8">
+                    <a href="http://10.113.0.74:8505" target="_blank" rel="noopener noreferrer" class="bg-brand-green-500 text-white font-semibold px-8 py-4 rounded-lg hover:bg-brand-green-600 transition shadow-lg text-lg" title="Open dashboard in a new tab">View Dashboard</a>
+                </div>
+                <!-- Optional Embed Area -->
+                <div class="mt-12 bg-gray-100 border border-gray-200 rounded-xl p-4 md:p-8 shadow-inner">
+                     <p class="text-gray-600 mb-4">Dashboard Preview:</p>
+                    <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden bg-white">
+                         <iframe 
+                            src="http://10.113.0.74:8505" 
+                            class="w-full h-[600px] border-0"
+                            title="CarbonSense Live Dashboard"
+                            sandbox="allow-scripts allow-same-origin"
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-4">Note: The embedded dashboard is for demonstration. For the full interactive experience, please use the "View Dashboard" button.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-20 bg-brand-green-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">Loved by people who care.</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <p class="text-gray-600">"Finally, a tool that isn't preachy or complicated. CarbonSense gave me the clarity I needed to make small changes that feel significant. Highly recommended!"</p>
+                        <div class="mt-6 flex items-center">
+                            <img src="https://placehold.co/48x48/E0F2E9/388E3C?text=AJ" alt="Alex Johnson" class="h-12 w-12 rounded-full">
+                            <div class="ml-4">
+                                <p class="font-semibold text-gray-900">Alex Johnson</p>
+                                <p class="text-gray-500">Individual User</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <p class="text-gray-600">"As an event planner, sustainability is key. CarbonSense's event module was incredibly insightful for planning our annual conference. It helped us pinpoint our biggest impacts."</p>
+                        <div class="mt-6 flex items-center">
+                            <img src="https://placehold.co/48x48/E0F2E9/388E3C?text=SC" alt="Samantha Carter" class="h-12 w-12 rounded-full">
+                            <div class="ml-4">
+                                <p class="font-semibold text-gray-900">Samantha Carter</p>
+                                <p class="text-gray-500">Event Organizer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white p-8 rounded-xl shadow-sm">
+                        <p class="text-gray-600">"I love that it's privacy-focused. I didn't have to create an account or hand over personal data. Just simple, honest information. It's refreshing."</p>
+                        <div class="mt-6 flex items-center">
+                            <img src="https://placehold.co/48x48/E0F2E9/388E3C?text=BM" alt="Ben Miller" class="h-12 w-12 rounded-full">
+                            <div class="ml-4">
+                                <p class="font-semibold text-gray-900">Ben Miller</p>
+                                <p class="text-gray-500">Eco-Enthusiast</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+                    <p class="mt-4 text-lg text-gray-600">Have questions? We've got answers.</p>
+                </div>
+                <div class="space-y-4" id="faq-container">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6">
+                            <span class="text-lg font-semibold text-gray-800">Is my data truly private?</span>
+                            <svg class="w-6 h-6 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-gray-600">
+                            <p>Absolutely. We are committed to privacy by design. CarbonSense does not require you to sign up or create an account. All calculations happen anonymously, and we do not store any personal identifiable information linked to your estimates. Your session is temporary and your data is forgotten.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6">
+                            <span class="text-lg font-semibold text-gray-800">How accurate is the estimate?</span>
+                            <svg class="w-6 h-6 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-gray-600">
+                           <p>Our goal is to provide a reliable and insightful estimate, not a perfect scientific audit. We use reputable public datasets and standard emission factors. The accuracy depends on the information you provide. Think of it as a powerful guide to help you understand your relative impact and identify areas for improvement.</p>
+                        </div>
+                    </div>
+                     <!-- FAQ Item 3 -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6">
+                            <span class="text-lg font-semibold text-gray-800">Who is this tool for?</span>
+                            <svg class="w-6 h-6 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-gray-600">
+                           <p>CarbonSense is for everyone! It's for curious individuals who want to learn about their personal impact, for families wanting to live more sustainably, and for event organizers who need a straightforward way to estimate the footprint of their gatherings, from small meetups to large conferences.</p>
+                        </div>
+                    </div>
+                     <!-- FAQ Item 4 -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6">
+                            <span class="text-lg font-semibold text-gray-800">Is CarbonSense free to use?</span>
+                            <svg class="w-6 h-6 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-gray-600">
+                           <p>Yes, the individual carbon footprint estimator is completely free. We may offer premium features for event organizers and businesses in the future, but our core mission is to make sustainability insights accessible to all.</p>
+                        </div>
+                    </div>
+                     <!-- FAQ Item 5 -->
+                    <div class="bg-gray-50 border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6">
+                            <span class="text-lg font-semibold text-gray-800">Where does your data come from?</span>
+                            <svg class="w-6 h-6 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-6 text-gray-600">
+                           <p>We base our calculations on publicly available, scientifically-vetted data from sources like the EPA (Environmental Protection Agency), DEFRA (Department for Environment, Food & Rural Affairs), and other leading environmental research institutions. We are continuously updating our models to ensure the information is as current as possible.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold">CarbonSense</h3>
+                    <p class="mt-2 text-gray-400">Making sustainability simple and accessible.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Contact</h3>
+                    <ul class="mt-2 space-y-2 text-gray-400">
+                        <li><a href="mailto:hello@carbonsense.com" class="hover:text-white transition">hello@carbonsense.com</a></li>
+                        <li><a href="tel:+1234567890" class="hover:text-white transition">+1 (234) 567-890</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Follow Us</h3>
+                    <div class="mt-2 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition" title="Our Twitter page"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition" title="Our LinkedIn page"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
+                &copy; 2024 CarbonSense. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Accordion Script for FAQ
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqContainer = document.getElementById('faq-container');
+            if (faqContainer) {
+                faqContainer.addEventListener('click', (e) => {
+                    const questionButton = e.target.closest('.faq-question');
+                    if (!questionButton) return;
+
+                    const answer = questionButton.nextElementSibling;
+                    const icon = questionButton.querySelector('svg');
+
+                    // Close all other open answers
+                    faqContainer.querySelectorAll('.faq-question').forEach(btn => {
+                        if (btn !== questionButton) {
+                            btn.nextElementSibling.style.maxHeight = '0';
+                            btn.querySelector('svg').classList.remove('rotate-180');
+                        }
+                    });
+
+                    // Toggle the clicked answer
+                    if (answer.style.maxHeight && answer.style.maxHeight !== '0px') {
+                        answer.style.maxHeight = '0';
+                        icon.classList.remove('rotate-180');
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.classList.add('rotate-180');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
